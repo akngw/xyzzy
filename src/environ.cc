@@ -5,6 +5,8 @@
 #include "fnkey.h"
 #include "monitor.h"
 
+#undef environ
+
 const char Registry::base[] = "Software\\Free Software\\Xyzzy\\";
 const char Registry::Settings[] = "Settings";
 
@@ -926,7 +928,7 @@ lisp
 Fsi_environ ()
 {
   lisp r = Qnil;
-  for (char **e = environ; *e; e++)
+  for (char **e = _environ; *e; e++)
     {
       char *eq = strchr (*e, '=');
       if (!eq) continue;
