@@ -1571,10 +1571,7 @@ listen_stream (lisp stream)
         case st_file_io:
         case st_file_input:
           {
-#ifdef _MSC_VER
-            if (xfile_stream_input (stream)->_cnt > 0)
-              return 1;
-#else
+#ifndef _MSC_VER
 # error "Not Supported"
 #endif
             if (WaitForSingleObject (HANDLE (_get_osfhandle (_fileno (xfile_stream_input (stream)))),
