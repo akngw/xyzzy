@@ -168,7 +168,7 @@
     <ClCompile Include="..\src\edict.cc" />
     <ClCompile Include="..\src\encdec.cc" />
     <ClCompile Include="..\src\encoding.cc" />
-    <ClCompile Include="..\src\environ.cc" />
+    <ClCompile Include="..\src\app-environ.cc" />
     <ClCompile Include="..\src\eval.cc" />
     <ClCompile Include="..\src\except.cc" />
     <ClCompile Include="..\src\fileio.cc" />
@@ -323,7 +323,7 @@
     <ClInclude Include="..\src\ed.h" />
     <ClInclude Include="..\src\encoding.h" />
     <ClInclude Include="..\src\endian.h" />
-    <ClInclude Include="..\src\environ.h" />
+    <ClInclude Include="..\src\app-environ.h" />
     <ClInclude Include="..\src\error.h" />
     <ClInclude Include="..\src\except.h" />
     <ClInclude Include="..\src\filer.h" />

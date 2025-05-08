@@ -120,7 +120,7 @@
     <ClCompile Include="..\src\encoding.cc">
       <Filter>ソース ファイル\ed</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\environ.cc">
+    <ClCompile Include="..\src\app-environ.cc">
       <Filter>ソース ファイル\ed</Filter>
     </ClCompile>
     <ClCompile Include="..\src\eval.cc">
@@ -718,7 +718,7 @@
     <ClInclude Include="..\src\encoding.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\environ.h">
+    <ClInclude Include="..\src\app-environ.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="..\src\error.h">

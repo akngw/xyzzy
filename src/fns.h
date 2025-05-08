@@ -57,7 +57,7 @@ char *print_key_sequence (char *, char *, Char);
 void ding (int);
 int get_glyph_width (Char, const struct glyph_width &);
 
-/* environ.cc */
+/* app-environ.cc */
 void init_environ ();
 
 /* lread.cc */

@@ -2,7 +2,7 @@
 #include "ed.h"
 #include "pathname.h"
 #include "dyn-handle.h"
-#include "environ.h"
+#include "app-environ.h"
 #include "except.h"
 #include "mman.h"
 #include "thread.h"

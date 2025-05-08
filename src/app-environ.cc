@@ -1,11 +1,9 @@
 #include "stdafx.h"
 #include "ed.h"
-#include "environ.h"
+#include "app-environ.h"
 #include "conf.h"
 #include "fnkey.h"
 #include "monitor.h"
-
-#undef environ
 
 const char Registry::base[] = "Software\\Free Software\\Xyzzy\\";
 const char Registry::Settings[] = "Settings";
@@ -784,14 +782,14 @@ Fget_system_directory ()
   return xsymbol_value (Qsystem_dir);
 }
 
-int environ::save_window_size = 1;
-int environ::save_window_snap_size = 0;
-int environ::save_window_position = 1;
-int environ::restore_window_size;
-int environ::restore_window_position;
+int app_environ::save_window_size = 1;
+int app_environ::save_window_snap_size = 0;
+int app_environ::save_window_position = 1;
+int app_environ::restore_window_size;
+int app_environ::restore_window_position;
 
 int
-environ::load_geometry (int cmdshow, POINT *point, SIZE *size)
+app_environ::load_geometry (int cmdshow, POINT *point, SIZE *size)
 {
   read_conf (cfgMisc, cfgSaveWindowSize, save_window_size);
   read_conf (cfgMisc, cfgSaveWindowSnapSize, save_window_snap_size);
@@ -826,13 +824,13 @@ environ::load_geometry (int cmdshow, POINT *point, SIZE *size)
       && w.rcNormalPosition.left < w.rcNormalPosition.right
       && w.rcNormalPosition.top < w.rcNormalPosition.bottom)
     {
-      if (environ::restore_window_size)
+      if (app_environ::restore_window_size)
         {
           cmdshow = w.showCmd;
           size->cx = w.rcNormalPosition.right - w.rcNormalPosition.left;
           size->cy = w.rcNormalPosition.bottom - w.rcNormalPosition.top;
         }
-      if (environ::restore_window_position)
+      if (app_environ::restore_window_position)
         {
           RECT r;
           int min_visible = (GetSystemMetrics(SM_CYSIZEFRAME)
@@ -858,7 +856,7 @@ environ::load_geometry (int cmdshow, POINT *point, SIZE *size)
 }
 
 void
-environ::save_geometry ()
+app_environ::save_geometry ()
 {
   save_window_size = xsymbol_value (Vsave_window_size) != Qnil;
   save_window_snap_size = xsymbol_value (Vsave_window_snap_size) != Qnil;
@@ -928,7 +926,7 @@ lisp
 Fsi_environ ()
 {
   lisp r = Qnil;
-  for (char **e = _environ; *e; e++)
+  for (char **e = environ; *e; e++)
     {
       char *eq = strchr (*e, '=');
       if (!eq) continue;

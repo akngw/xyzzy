@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "ed.h"
-#include "environ.h"
+#include "app-environ.h"
 #include "conf.h"
 #include "font.h"
 #include "filer.h"

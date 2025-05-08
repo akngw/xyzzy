@@ -667,7 +667,7 @@ static symbols lsp[] =
   DEFUN3 (gc, 0, 1, 0),
   DEFVAR2 (*garbage-collection-messages*),
 
-  /* environ.cc */
+  /* app-environ.cc */
   DEFUN3 (machine-instance, 0, 0, 0),
   DEFUN3 (machine-type, 0, 0, 0),
   DEFUN3 (machine-version, 0, 0, 0),
@@ -930,7 +930,7 @@ static symbols sys[] =
   SI_DEFUN3 (*structure-subtypep, 2, 0, 0),
   SI_DEFUN3 (*structure-reader, 2, 0, 0),
 
-  /* environ.cc */
+  /* app-environ.cc */
   SI_DEFUN3 (system-root, 0, 0, 0),
 #undef environ
   SI_DEFUN3 (environ, 0, 0, 0),
@@ -1708,7 +1708,7 @@ static symbols ed[] =
   DEFVAR2 (*evalhook*),
   DEFVAR2 (*applyhook*),
 
-  /* environ.cc */
+  /* app-environ.cc */
   DEFUN3 (write-registry, 3, 0, 0),
   DEFUN3 (write-registry-literally, 3, 0, 0),
   DEFUN3 (read-registry, 2, 1, 0),

@@ -1,9 +1,7 @@
-#ifndef _environ_h_
-# define _environ_h_
+#ifndef _app_environ_h_
+# define _app_environ_h_
 
-# undef environ
-
-class environ
+class app_environ
 {
 public:
   static int save_window_size;

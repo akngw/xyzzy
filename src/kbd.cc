@@ -3,7 +3,7 @@
 #include "filer.h"
 #include "safe_ptr.h"
 #include "encoding.h"
-#include "environ.h"
+#include "app-environ.h"
 
 kbd_queue::kbd_queue ()
      : head (0), tail (0), pending (lChar_EOF), last_ime_status (-1),
